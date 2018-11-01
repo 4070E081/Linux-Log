@@ -6,43 +6,24 @@
 首先先來看看系統日誌設定檔 /etc/syslog.conf 的內容
 ```
 [root@benjr ~]# cat /etc/syslog.conf
-
 #Log all kernel messages to the console.
-
 #Logging much else clutters up the screen.
-
 #kern.*       /dev/console
-
 #Log anything (except mail) of level info or higher
-
 #Don't log private authentication messages!
-
 *.info;mail.none;news.none;authpriv.none;cron.none  /var/log/messages
-
 #The authpriv file has restricted access.
-
 authpriv.*      /var/log/secure
-
 #Log all the mail messages in one place.
-
 mail.*          /var/log/maillog
-
 #Log cron stuff
-
 cron.*          /var/log/cron
-
 #Everybody gets emergency messages
-
 *.emerg       *
-
 #Save news errors of level crit and higher in a special file.
-
 uucp,news.crit      /var/log/spooler
-
 #Save boot messages also to boot.log
-
 local7.*       /var/log/boot.log
-
 
 
 #INN
